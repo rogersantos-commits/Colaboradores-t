@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Escala App - Roger de Sá</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU SUPERIOR -->
+<nav class="top-menu">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <div id="menuBox" class="menu-box">
+    <a href="index.html">Início</a>
+    <a href="contact.html">Contato</a>
+    <a href="https://instagram.com/roger.de.sa" target="_blank">Instagram</a>
+    <a href="https://wa.me/5548998083145" target="_blank">WhatsApp</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="top-header">
+
+  <div class="header-info">
+    <h2>Roger de Sá</h2>
+
+    <div class="links-row">
+      <a class="insta-link" href="https://instagram.com/roger.de.sa" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="insta-icon" alt="">
+        @roger.de.sa
+      </a>
+
+      <a class="zap-link" href="https://wa.me/5548998083145" target="_blank" title="WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="zap-icon" alt="">
+        Fale no WhatsApp
+      </a>
+    </div>
+
+    <p class="zap-num">WhatsApp: (48) 99808-3145</p>
+  </div>
+</header>
+
+<h1 class="page-title">Escala de Colaboradores</h1>
+
+<div class="container">
+
+  <!-- ADICIONAR COLABORADOR -->
+  <div class="card">
+    <h2>Adicionar Colaborador</h2>
+    <input id="nome" type="text" placeholder="Nome">
+    <input id="telefone" type="text" placeholder="Telefone">
+    <div style="display:flex; gap:8px;">
+      <button onclick="addColaborador()">Adicionar</button>
+      <button class="ghost" onclick="importExemplo()">Exemplo</button>
+    </div>
+  </div>
+
+  <!-- LISTA -->
+  <div class="card">
+    <h2>Lista de Colaboradores</h2>
+    <div id="listaColaboradores"></div>
+  </div>
+
+  <!-- GRUPOS -->
+  <div class="card">
+    <h2>Grupos</h2>
+    <div id="grupos"></div>
+  </div>
+
+</div>
+
+<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+<a href="https://wa.me/5548998083145" target="_blank" class="zap-float" title="WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<!-- BARRA INFERIOR -->
+<footer class="bottom-bar">
+  <button onclick="scrollToTop()">⬆ Topo</button>
+  <button onclick="toggleDarkMode()">🌙/☀️</button>
+  <a href="contact.html">Contato</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
