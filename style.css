@@ -1,0 +1,244 @@
+/* ===== TEMA BASE ===== */
+:root{
+  --bg-dark: #111316;
+  --card-dark: #1f1f23;
+  --text-dark: #fff;
+
+  --bg-light: #f6f7fb;
+  --card-light: #fff;
+  --text-light: #111;
+}
+
+html,body { height:100%; margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 12px;
+}
+
+/* LIGHT MODE (toggle) */
+.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* MENU SUPERIOR */
+.top-menu {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 4px;
+}
+
+.menu-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-box {
+  display:none;
+  flex-direction:column;
+  background:#222;
+  padding:10px;
+  border-radius:8px;
+  position:absolute;
+  top:48px;
+  left:8px;
+  width:170px;
+  z-index:50;
+}
+
+.menu-box a { color:#fff; text-decoration:none; padding:6px 0; }
+.menu-box a:hover { color:#4a90e2; }
+
+/* HEADER */
+.top-header {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  background: linear-gradient(135deg, #4a90e2, #1f5fa8);
+  padding:16px;
+  border-radius:12px;
+  margin-bottom:18px;
+  box-shadow: 0 0 30px rgba(74,144,226,0.35);
+  text-align:center;
+  animation: neonGlow 2s infinite alternate;
+}
+
+/* FOTO CIRCULAR (já pre-processada) */
+.perfil-img {
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:4px solid rgba(255,255,255,0.9);
+  object-fit:cover;
+  box-shadow: 0 0 18px rgba(74,144,226,0.9);
+}
+
+/* ANIMAÇÃO NEON */
+@keyframes neonGlow {
+  from { box-shadow: 0 0 12px rgba(74,144,226,0.5); transform: translateY(0); }
+  to   { box-shadow: 0 0 30px rgba(74,144,226,0.9); transform: translateY(-2px); }
+}
+
+.header-info h2 { margin:0 0 6px 0; color:white; font-size:20px; }
+.links-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.insta-link, .zap-link { display:flex; gap:6px; align-items:center; color:white; text-decoration:none; font-weight:700; }
+.insta-link img, .zap-link img { width:20px; height:20px; }
+
+.zap-num { margin-top:6px; color:rgba(255,255,255,0.95); font-weight:600; }
+
+/* TÍTULO DA PÁGINA */
+.page-title { text-align:center; margin:12px 0 8px 0; font-size:18px; }
+
+/* LAYOUT PRINCIPAL */
+.container {
+  max-width:920px;
+  margin:0 auto 120px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:14px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.03);
+  border-radius:12px;
+  padding:14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card h2 { margin-top:0; }
+
+/* INPUTS E BOTOES */
+input[type="text"], input[type="tel"]{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color:inherit;
+  margin-bottom:8px;
+  outline:none;
+}
+button {
+  background: #4a90e2;
+  color:white;
+  border: none;
+  padding:10px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+button.ghost {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+  color:white;
+}
+
+/* LISTA */
+#listaColaboradores .col-item {
+  background: rgba(255,255,255,0.03);
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:8px;
+}
+
+/* GROUPS */
+.group-card {
+  background: rgba(255,255,255,0.015);
+  padding:10px;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+.group-header { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px; }
+.group-header small { color: rgba(255,255,255,0.8); }
+
+/* BOTAO FLUTUANTE DO WHATSAPP */
+.zap-float {
+  position:fixed;
+  bottom:90px;
+  right:16px;
+  width:64px;
+  height:64px;
+  background:#25d366;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 18px rgba(37,211,102,0.6);
+  animation: pulseZap 1.3s infinite;
+  z-index:60;
+}
+.zap-float img { width:36px; }
+
+@keyframes pulseZap{
+  0%{ transform:scale(1); }
+  50%{ transform:scale(1.06); }
+  100%{ transform:scale(1); }
+}
+
+/* BOTTOM BAR */
+.bottom-bar {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background: linear-gradient(90deg,#0f1720,#071026);
+  padding:10px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  border-top:3px solid rgba(74,144,226,0.7);
+  z-index:60;
+}
+.bottom-bar button, .bottom-bar a { background:none; border:none; color:white; font-weight:700; text-decoration:none; cursor:pointer; }
+
+/* CONTACT PAGE STYLES */
+.title-contact { text-align:center; margin-top:20px; color:inherit; }
+.contact-box {
+  max-width:360px;
+  margin:14px auto 80px;
+  text-align:center;
+  padding:18px;
+  border-radius:12px;
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.perfil-img-contact {
+  width:120px; height:120px; border-radius:50%;
+  object-fit:cover; border:4px solid rgba(255,255,255,0.95);
+  box-shadow: 0 0 18px rgba(74,144,226,0.9);
+  margin-bottom:12px;
+}
+.cont-btn {
+  display:block; margin:8px auto; padding:10px 14px; border-radius:10px; font-weight:800; text-decoration:none;
+  color:black; width:80%;
+}
+.cont-btn.whatsapp { background:#25d366; }
+.cont-btn.insta { background:#e4405f; color:white; }
+
+/* QR */
+.qr-img { width:220px; height:220px; margin-top:12px; }
+
+/* RESPONSIVO */
+@media(min-width:900px){
+  .container { grid-template-columns: 1fr 420px; align-items:start; }
+  .top-header { justify-content:flex-start; padding:18px 24px; }
+  .header-info { text-align:left; }
+  .menu-btn { color:white; }
+}
+
+/* LIGHT MODE OVERRIDES */
+.light-mode .menu-box { background:#fff; }
+.light-mode .top-header { box-shadow:none; background: linear-gradient(135deg,#a9d2ff,#6fa6ff); color:#111; }
+.light-mode .card { background: var(--card-light); color:var(--text-light); }
+.light-mode input { background: #fff; color:var(--text-light); border:1px solid #ddd; }
+.light-mode .bottom-bar { background:#fff; color:#111; border-top:3px solid #4a90e2; }
